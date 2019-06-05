@@ -13,13 +13,14 @@ class CatalogoController extends Controller
      */
     public function index()
     {
-        $catalogo = [
-            ['producto' => 'Harina de trigo'],
-            ['producto' => 'Arroz parvorizado'],
-            ['producto' => 'Chocolate en polvo'],
-            ['producto' => 'Café liofilizado'],
-            ['producto' => 'Queso campesino'],
-        ];
+        //$catalogo = [
+        //    ['producto' => 'Harina de trigo'],
+        //    ['producto' => 'Arroz parvorizado'],
+        //    ['producto' => 'Chocolate en polvo'],
+        //    ['producto' => 'Café liofilizado'],
+        //    ['producto' => 'Queso campesino'],
+        //];
+        $catalogo = \DB::table('productos')->get();
  
         return view('catalogo', compact('catalogo'));
     }

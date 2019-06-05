@@ -8,7 +8,7 @@
     <ul>
        @isset ($catalogo)
            @forelse($catalogo as $itemCatalogo)
-               <li> {{ $itemCatalogo['producto'] }} </li>
+               <li>{{ $itemCatalogo->id }} {{ $itemCatalogo->nombre }} </li>
            @empty
                <li>No hay proyectos para mostrar</li>
            @endforelse
