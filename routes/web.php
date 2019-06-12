@@ -40,7 +40,7 @@ Route::get('home', function () {
 })->name('home');
 
 //Route::get('/catalogo', 'CatalogoController@index')->name('catalogo');
-Route::resource('catalogo', 'CatalogoController');
+Route::resource('catalogo', 'Productocontroller');
 //Route::resource('catalogo', 'CatalogoController')->only([
 //    'index', 'show'
 //]);
@@ -50,4 +50,8 @@ Route::resource('catalogo', 'CatalogoController');
 
 //Route::resource('catalogo', 'CatalogoController2');
 Route::view('/contacto','contacto')->name('contacto');
-Route::post('contacto', 'MensajesController@store');
+Route::post('contacto', 'MensajeController@store');
+Route::get('/catalogo', 
+           'ProductoController@index')->name('productos.index');
+Route::get('/catalogo/{id}', 
+           'ProductoController@show')->name('productos.show');

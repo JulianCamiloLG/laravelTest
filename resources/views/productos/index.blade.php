@@ -7,12 +7,12 @@
 @section('contenido')
     <ul>
        @isset ($productos)
-           @forelse($productos as $itemCatalogo)
+           @forelse($productos as $producto)
                <li>
-                <a href="{{ route('producto.show', $itemCatalogo) }}">
-                {{ $itemCatalogo->id }} {{ $itemCatalogo->nombre }} 
+                <a href="{{ route('productos.show', $producto) }}">
+                {{ $producto->id }} {{ $producto->nombre }} 
                 <br>
-                {{ $itemCatalogo->created_at->diffForHumans()}}
+                {{ $producto->created_at->diffForHumans()}}
                 </a>
                 </li>
                

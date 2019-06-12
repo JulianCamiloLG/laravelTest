@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MensajesController extends Controller
+class MensajeController extends Controller
 {
     public function store() {
         // ver las reglas que se pueden ingresar en el array asociativo

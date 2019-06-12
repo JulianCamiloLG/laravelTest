@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Producto;
 
-class CatalogoController extends Controller
+class ProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +21,16 @@ class CatalogoController extends Controller
         //    ['producto' => 'Café liofilizado'],
         //    ['producto' => 'Queso campesino'],
         //];
-        $catalogo = \DB::table('productos')->get();
+        //$catalogo = \DB::table('productos')->get();
+        //$catalogo =Producto::get();
+        //$catalogo=Producto::orderBy('created_at', 'DESC')->get();
+
+        //$catalogo = Producto::latest('cantidad_disponible')->paginate(2);
  
-        return view('catalogo', compact('catalogo'));
+        //return view('catalogo', compact('catalogo'));
+        return view('productos.index', [
+            'productos' => Producto::latest()->paginate(),
+        ]);
     }
 
     /**
@@ -54,7 +62,9 @@ class CatalogoController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('productos.show', [
+            'producto' => Producto::findOrFail($id),
+        ]);
     }
 
     /**
