@@ -10,9 +10,10 @@
         <li class="{{ seleccionado('productos.index') }}">
             <a href="{{ route('productos.index') }}">Productos</a>
         </li>
-        <li class="{{ seleccionado('contacto') }}">
-            <a href="{{ route('contacto') }}">Contacto</a>
+        <li class="{{ seleccionado('crear-mensaje') }}">
+               <a href="{{ route('crear-mensaje') }}">Contacto</a>
         </li>
+
      
        </ul>
    </nav>

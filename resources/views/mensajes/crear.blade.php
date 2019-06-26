@@ -5,7 +5,7 @@
 @section('contenido')
     <h1>Contacto</h1>
     
-    <form method="post" action={{ route('contacto') }}>
+    <form method="post" action={{ route('guardar-mensaje') }}>
         @csrf
         <input name="nombre" placeholder="Nombre..." 
                value="{{ old('nombre') }}"><br>

@@ -50,8 +50,18 @@ Route::resource('catalogo', 'Productocontroller');
 
 //Route::resource('catalogo', 'CatalogoController2');
 Route::view('/contacto','contacto')->name('contacto');
-Route::post('contacto', 'MensajeController@store');
+Route::get('mensajes/crear', 'MensajesController@create') 
+       ->name('crear-mensaje');
 Route::get('/catalogo', 
            'ProductoController@index')->name('productos.index');
 Route::get('/catalogo/{id}', 
            'ProductoController@show')->name('productos.show');
+Route::post('mensajes', 'MensajesController@store')->name('guardar-mensaje');
+Route::get('mensajes', 'MensajesController@index')
+       ->name('ver-mensajes');
+Route::get('mensajes/{id}', 'MensajesController@show')
+       ->name('buscar-mensaje');
+Route::get('mensajes/{id}/editar', 'MensajesController@edit')
+       ->name('editar-mensaje');
+Route::delete('mensajes/{id}', 'MensajesController@destroy')
+       ->name('eliminar-mensaje');
